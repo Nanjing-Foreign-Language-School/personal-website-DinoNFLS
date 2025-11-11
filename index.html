@@ -1,5 +1,124 @@
-<html>
-  <body>
-    Hello, my name is Dino. This is my personal website.
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Name — Personal Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A short introduction to who I am, what I do, and what I care about." />
+  <style>
+    :root {
+      --bg: #0f172a;        /* slate-900 */
+      --card: #111827;      /* gray-900 */
+      --text: #e5e7eb;      /* gray-200 */
+      --muted: #9ca3af;     /* gray-400 */
+      --accent: #38bdf8;    /* sky-400 */
+      --link: #93c5fd;      /* blue-300 */
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      background: radial-gradient(1200px 600px at 20% -10%, #1f2937, var(--bg));
+      color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 960px; margin: 0 auto; padding: 40px 24px 80px;
+    }
+    header { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 28px; }
+    header h1 { font-size: 2.2rem; margin: 0; letter-spacing: 0.2px; }
+    header p { margin: 0; color: var(--muted); }
+    .tagline { color: var(--accent); font-weight: 600; }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(148,163,184,0.18);
+      border-radius: 16px; padding: 20px; margin: 18px 0;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.35);
+      backdrop-filter: blur(6px);
+    }
+    .card h2 { margin: 0 0 10px; font-size: 1.2rem; letter-spacing: 0.3px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 840px) { .grid { grid-template-columns: 1.2fr 1fr; } }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { margin: 8px 0; }
+    .pill {
+      display: inline-block; border: 1px dashed rgba(148,163,184,0.35);
+      padding: 6px 10px; border-radius: 999px; margin: 6px 6px 0 0; color: var(--muted);
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { margin-top: 26px; color: var(--muted); font-size: 0.95rem; }
+    .cta { display: inline-block; margin-top: 10px; background: rgba(56,189,248,0.12); color: var(--accent);
+           border: 1px solid rgba(56,189,248,0.35); padding: 10px 14px; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <span class="tagline">Hello, I’m</span>
+      <h1>Your Name</h1>
+      <p>Role or focus — e.g., Product Designer & Frontend Developer in Hong Kong</p>
+    </header>
+
+    <section class="card">
+      <h2>About</h2>
+      <p>
+        Write a few honest lines about what you’re building or learning, and why it matters to you.
+        What do you care about when nobody’s watching? Keep it simple, human, and specific.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Recent work</h2>
+        <ul>
+          <li>
+            <strong>Project Title</strong> — one sentence on the problem and your impact.
+            <br /><a href="#">Live demo</a> · <a href="#">Case study</a> · <a href="#">GitHub</a>
+          </li>
+          <li>
+            <strong>Another Project</strong> — what changed because of it.
+            <br /><a href="#">Details</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Skills</h2>
+        <div>
+          <span class="pill">Design: UX, UI, Prototyping</span>
+          <span class="pill">Code: HTML, CSS, JavaScript</span>
+          <span class="pill">Tools: Figma, VS Code</span>
+          <span class="pill">Other: Writing, Research</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Highlights</h2>
+      <ul>
+        <li><strong>One-line milestone:</strong> e.g., shipped X that helped Y do Z.</li>
+        <li><strong>Learning focus:</strong> what you’re currently exploring.</li>
+        <li><strong>Values:</strong> the principles you don’t trade off.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Contact</h2>
+      <p>
+        Available for collaborations or a quick coffee chat.
+        <br />Email: <a href="mailto:you@example.com">you@example.com</a>
+        <br />LinkedIn: <a href="#">/in/yourprofile</a> · GitHub: <a href="#">@yourhandle</a>
+      </p>
+      <a class="cta" href="mailto:you@example.com?subject=Hello%20from%20your%20site">Say hello</a>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Your Name · Based in Hong Kong · Built with care
+    </footer>
+  </main>
+
+  <script>
+    // Minimal nicety: current year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>

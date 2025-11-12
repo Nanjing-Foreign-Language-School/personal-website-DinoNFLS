@@ -21,13 +21,24 @@
       color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
     }
-    .container {
-      max-width: 960px; margin: 0 auto; padding: 40px 24px 80px;
+    .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px 80px; }
+    header { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 28px; align-items: center; }
+    .hero {
+      display: grid; grid-template-columns: 1fr; gap: 20px; align-items: center;
     }
-    header { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 28px; }
-    header h1 { font-size: 2.2rem; margin: 0; letter-spacing: 0.2px; }
+    @media (min-width: 840px) {
+      .hero { grid-template-columns: 1.2fr 0.8fr; }
+    }
+    header h1 { font-size: 2.4rem; margin: 0; letter-spacing: 0.2px; }
     header p { margin: 0; color: var(--muted); }
     .tagline { color: var(--accent); font-weight: 600; }
+    .portrait {
+      width: 180px; height: 180px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(148,163,184,0.18);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.35); justify-self: center; background: #0b1220;
+    }
+    .portrait img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
     .card {
       background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
       border: 1px solid rgba(148,163,184,0.18);
@@ -44,26 +55,49 @@
       display: inline-block; border: 1px dashed rgba(148,163,184,0.35);
       padding: 6px 10px; border-radius: 999px; margin: 6px 6px 0 0; color: var(--muted);
     }
+    .scores {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 8px;
+    }
+    .score {
+      background: rgba(56,189,248,0.08);
+      border: 1px solid rgba(56,189,248,0.35);
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+    }
+    .score .label { color: var(--muted); font-size: 0.9rem; }
+    .score .value { color: var(--accent); font-weight: 700; font-size: 1.1rem; }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    footer { margin-top: 26px; color: var(--muted); font-size: 0.95rem; }
-    .cta { display: inline-block; margin-top: 10px; background: rgba(56,189,248,0.12); color: var(--accent);
-           border: 1px solid rgba(56,189,248,0.35); padding: 10px 14px; border-radius: 10px; }
+    footer { margin-top: 26px; color: var(--muted); font-size: 0.95rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .cta {
+      display: inline-block; margin-top: 10px; background: rgba(56,189,248,0.12); color: var(--accent);
+      border: 1px solid rgba(56,189,248,0.35); padding: 10px 14px; border-radius: 10px;
+    }
   </style>
 </head>
 <body>
   <main class="container">
     <header>
-      <span class="tagline">Hello, I’m</span>
-      <h1>Dino</h1>
-      <p>Chinese high school student studying A-Level</p>
+      <div class="hero">
+        <div>
+          <span class="tagline">Hello, I’m</span>
+          <h1>Dino</h1>
+          <p>Chinese high school student studying A-Level</p>
+        </div>
+        <div class="portrait" aria-hidden="false">
+          <!-- Replace the src with your uploaded photo path if different -->
+          <img src="TYAg4rAUEqUzUEUvfPYZ6.jpeg" alt="Dino standing by a European riverside with boats and classic architecture in the background." />
+        </div>
+      </div>
     </header>
 
     <section class="card">
-      <h2>About Me</h2>
+      <h2>About me</h2>
       <p>
-        I’m Dino, currently a high school student in China with a passion for Math, Physics, and Computer Science.
-        I plan to go abroad for university to study engineering, where I hope to combine my love for technology with real-world problem solving.
+        I’m Dino, a high school student in China with a passion for Math, Physics, and Computer Science.
+        I aim to study engineering abroad, combining my love for technology with real-world problem solving.
+        I enjoy building small projects, learning new tools, and exploring how theory turns into impactful applications.
       </p>
     </section>
 
@@ -90,22 +124,45 @@
     <section class="card">
       <h2>Activities</h2>
       <p>
-        I have done a wide range of extra-curricular activities, such as Phython programs and photography collections. I have also been learning French on Duolingo with a streak of over 365 days.
+        I’ve explored a range of extracurriculars, including Python programming projects and curated photography collections.
+        I’m also learning French on Duolingo, with a streak of over 365 days, which keeps me motivated and consistent.
       </p>
+    </section>
+
+    <section class="card">
+      <h2>IELTS scores</h2>
+      <div class="scores" role="list">
+        <div class="score" role="listitem">
+          <div class="label">Listening</div>
+          <div class="value">8.5</div>
+        </div>
+        <div class="score" role="listitem">
+          <div class="label">Reading</div>
+          <div class="value">9</div>
+        </div>
+        <div class="score" role="listitem">
+          <div class="label">Writing</div>
+          <div class="value">7</div>
+        </div>
+        <div class="score" role="listitem">
+          <div class="label">Speaking</div>
+          <div class="value">7</div>
+        </div>
+      </div>
     </section>
 
     <section class="card">
       <h2>Contact</h2>
       <p>
-        Feel free to reach out to me for collaborations or just to connect!
+        Feel free to reach out for collaborations or just to connect!
         <br />Email: <a href="mailto:dino.niu27@nflsicc.com">dino.niu27@nflsicc.com</a>
-        <br />WeChat: dinoptlsm</a>
+        <br />WeChat: <span>dinoptlsm</span>
       </p>
       <a class="cta" href="mailto:dino.niu27@nflsicc.com?subject=Hello%20Dino">Say hello</a>
     </section>
 
     <footer>
-      © <span id="y"></span> Dino Niu · Built with ChatGPT
+      © <span id="y"></span> Dino Niu · Built with Copilot
     </footer>
   </main>
 

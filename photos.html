@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dino — Photography Collection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --link: #93c5fd;
+    }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 20% -10%, #1f2937, var(--bg));
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 10px;
+      background: rgba(56,189,248,0.12);
+      color: var(--accent);
+      border: 1px solid rgba(56,189,248,0.35);
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+    .cta:hover { background: rgba(56,189,248,0.25); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+    }
+    .photo {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(148,163,184,0.18);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(2,6,23,0.3);
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>My Photography Collection</h1>
+    <a class="cta" href="index.html">← Back to Home</a>
+
+    <div class="gallery">
+      <!-- Add your photos below -->
+      <!-- Example:
+      <div class="photo"><img src="photos/lake.jpg" alt="Lake view at sunset"></div>
+      <div class="photo"><img src="photos/street.jpg" alt="City street at night"></div>
+      -->
+    </div>
+
+    <footer>© <span id="y"></span> Dino Niu · Photography Collection</footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

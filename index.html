@@ -75,6 +75,43 @@
       display: inline-block; margin-top: 10px; background: rgba(56,189,248,0.12); color: var(--accent);
       border: 1px solid rgba(56,189,248,0.35); padding: 10px 14px; border-radius: 10px;
     }
+    /* --- Fix horizontal overflow --- */
+    body {
+      overflow-x: hidden;
+    }
+
+    /* --- Make portrait responsive --- */
+    .portrait {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+    }
+
+    /* --- Prevent cards from overflowing --- */
+    .card {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* --- Ensure grid items shrink nicely on small screens --- */
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    /* --- Optional: Adjust padding on small screens --- */
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px 16px 60px;
+      }
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .card {
+        padding: 16px;
+      }
+    }
   </style>
 </head>
 <body>

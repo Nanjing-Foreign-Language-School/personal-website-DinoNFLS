@@ -75,7 +75,7 @@
             border: none;
             padding: 12px;
             font-size: 15px;
-            resize: vertical;
+            resize: none;
             outline: none;
         }
 
@@ -139,7 +139,7 @@
         <!-- =============== ENCRYPT =============== -->
         <div class="card">
             <h2>🔒 Encrypt</h2>
-            <textarea id="encryptInput" placeholder="Enter message to encrypt"></textarea>
+            <textarea id="encryptInput" placeholder="Enter message to encrypt" oninput="autoResize(this)"></textarea>
             <button onclick="encrypt()">Encrypt Message</button>
             <pre id="encryptOutput"></pre>
         </div>
@@ -147,7 +147,7 @@
         <!-- =============== DECRYPT =============== -->
         <div class="card">
             <h2>🔑 Decrypt</h2>
-            <textarea id="decryptInput" placeholder="Enter encrypted message"></textarea>
+            <textarea id="decryptInput" placeholder="Enter encrypted message" oninput="autoResize(this)"></textarea>
             <button onclick="decrypt()">Decrypt Message</button>
             <pre id="decryptOutput"></pre>
         </div>
@@ -239,6 +239,10 @@ output
             }
         }
 
+    function autoResize(textarea) {
+    textarea.style.height = "auto";          // reset
+    textarea.style.height = textarea.scrollHeight + "px";
+    }
     document.getElementById('y').textContent = new Date().getFullYear();
 
     </script>

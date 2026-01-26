@@ -223,11 +223,14 @@ def caesar_decipher(encrypted, shift, addi):
 
 
 # Main program
-shift = ord(message[0]) - 67
-addi = ord(message[1]) - 69
-message = message[2:]
-
-output = caesar_decipher(message, shift, addi)
+try:
+    shift = ord(message[0]) - 67
+    addi = ord(message[1]) - 69
+    message = message[2:]
+    
+    output = caesar_decipher(message, shift, addi)
+except IndexError:
+    output = "<invalid input>"
 output
             `;
 

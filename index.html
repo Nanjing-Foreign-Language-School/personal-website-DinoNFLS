@@ -60,7 +60,7 @@
 
     .grid { display: grid; gap: 16px; }
     @media (min-width: 840px) {
-      .grid { grid-template-columns: 0.8fr 1fr 0.8fr; }
+      .grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
     }
 
     ul { list-style: none; padding: 0; margin: 0; }
@@ -154,18 +154,20 @@
 
     <section class="grid">
       <div class="card">
-        <h2>Hobbies</h2>
+        <h2>Activities</h2>
         <ul>
           <li><a href="movies/movies.html">🎬 Watching movies</a></li>
           <li><a href="french/french.html">📖 Learning French</a></li>
+          <li>💻 Programming</li>
           <li>📸 Photography</li>
+
         </ul>
       </div>
       <div class="card">
         <h2>A-Level subjects</h2>
-        <span class="pill">Computer Science</span>
-        <span class="pill">Mathematics</span>
         <span class="pill">Physics</span>
+        <span class="pill">Mathematics</span>
+        <span class="pill">Computer Science</span>
         <span class="pill">Chemistry</span>
       </div>
       <div class="card">
@@ -176,15 +178,15 @@
         <span class="pill"><a href="achievements/SMC.jpg">SMC</a></span>
         <span class="pill"><a href="achievements/ACSL.jpg">ACSL preliminary</a></span>
       </div>
+            <div class="card">
+        <h2>Mini projects</h2>
+        <ul>
+          <li><a href="cypher.html">🔐 Cypher Lab</a></li>
+          <li><a href="countdown.html">⏳ Time Counter</a></li>
+        </ul>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Activities</h2>
-      <p>
-        I’ve explored a range of extracurriculars, including Python programming projects and curated photography collections.
-        I’m also learning French on Duolingo, with a streak of over 500 days, which keeps me motivated and consistent.
-      </p>
-    </section>
 
     <!-- IGCSE BLOCK -->
     <section class="card">
@@ -244,9 +246,7 @@
     </section>
 
     <footer>
-      © <span id="y"></span> Dinuo Niu · Built with ChatGPT  
-      <a href="cypher.html">🔐 My Cypher Lab</a>
-      <a href="countdown.html">⏳ Time Counter</a>
+      © <span id="y"></span> Dinuo Niu · <a href="https://github.com/Nanjing-Foreign-Language-School/personal-website-DinoNFLS/" target="_blank">my GitHub repository</a>
     </footer>
   </main>
 

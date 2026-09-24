@@ -95,6 +95,16 @@
       .igcsescores { grid-template-columns: 1fr; }
     }
 
+            .alevelscores {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 8px;
+    }
+    @media (max-width: 600px) {
+      .alevelscores { grid-template-columns: 1fr; }
+    }
+
     .score {
       background: rgba(56,189,248,0.08);
       border: 1px solid rgba(56,189,248,0.35);
@@ -188,7 +198,6 @@
     </section>
 
 
-    <!-- IGCSE BLOCK -->
     <section class="card">
       <h2>IGCSE grades</h2>
       <div class="igcsescores">
@@ -221,6 +230,37 @@
           <div class="label">Mathematics</div>
           <div class="sub">0580</div>
           <div class="value">A*</div>
+        </div>
+        <div class="score">
+          <div class="label">English as a Second Language</div>
+          <div class="sub">0511</div>
+          <div class="value">B</div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="card">
+      <h2>A-LEVEL grades</h2>
+      <div class="alevelscores">
+        <div class="score">
+          <div class="label">Mathematics</div>
+          <div class="sub">9709</div>
+          <div class="value">A*</div>
+        </div>
+        <div class="score">
+          <div class="label">Physics</div>
+          <div class="sub">9702</div>
+          <div class="value">a(ASL)</div>
+        </div>
+        <div class="score">
+          <div class="label">Chemistry</div>
+          <div class="sub">9701</div>
+          <div class="value">a(ASL)</div>
+        </div>
+        <div class="score">
+          <div class="label">Computer Science</div>
+          <div class="sub">9618</div>
+          <div class="value">a(ASL)</div>
         </div>
       </div>
     </section>
